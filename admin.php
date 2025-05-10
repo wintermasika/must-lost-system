@@ -1,0 +1,1 @@
+<?php echo 'Admin login and panel page.'; ?>

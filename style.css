@@ -1,0 +1,7 @@
+
+body { font-family: Arial; margin: 20px; }
+h1, h2 { color: #333; }
+form input, form textarea { margin-bottom: 10px; width: 100%; max-width: 400px; }
+form input[type='submit'] { background: #2b7a78; color: white; padding: 10px; cursor: pointer; }
+img { border: 1px solid #ccc; margin-top: 5px; }
+div:hover { background: #f9f9f9; }
