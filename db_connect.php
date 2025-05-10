@@ -3,15 +3,13 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$host = 'sql103.infinityfree.com';       // Your InfinityFree database host
-$user = 'if0_38917953';                  // Your database username (no tabs!)
-$password = 'masika16072002';            // Your database password
-$db = 'if0_38917953_lost_found';         // Your database name
+// Direct PostgreSQL connection string
+$connection_string = "postgresql://lostfound_db_user:YO6QeIeDr8NLr8wSko7FwP1Se8CH7UOD@dpg-d0fn3o3e5dus73f3f9b0-a.frankfurt-postgres.render.com/lostfound_db";
 
-$conn = new mysqli($host, $user, $password, $db);
+// Create PostgreSQL connection
+$conn = pg_connect($connection_string);
 
-// Check connection
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . pg_last_error());
 }
 ?>
