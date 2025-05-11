@@ -3,13 +3,19 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Direct PostgreSQL connection string
-$connection_string = "postgresql://lostfound_db_user:YO6QeIeDr8NLr8wSko7FwP1Se8CH7UOD@dpg-d0fn3o3e5dus73f3f9b0-a.frankfurt-postgres.render.com/lostfound_db";
+// MySQL connection details
+$servername = "sql103.infinityfree.com";  // Hostname
+$username = "if0_38917953";              // MySQL Username
+$password = "masika16072002";            // Your vPanel Password (use this in the script)
+$dbname = "if0_38917953_lost_found";     // Database name
 
-// Create PostgreSQL connection
-$conn = pg_connect($connection_string);
+// Create connection using mysqli
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+echo "Connected successfully to MySQL database!";
 ?>
