@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Load Balancer</title>
+  <script>
+    // Your two live site URLs
+    const servers = [
+      'https://must-lost-system.infinityfreeapp.com',
+      'https://must-lost-system.infy.uk'
+    ];
+
+    // Randomly pick one server
+    const selectedServer = servers[Math.floor(Math.random() * servers.length)];
+
+    // Redirect to selected server
+    window.location.href = selectedServer;
+  </script>
+</head>
+<body>
+  <p>Redirecting you to one of our servers for load balancing...</p>
+  <noscript>
+    JavaScript is required for load balancing. Please enable it.
+  </noscript>
+</body>
+</html>
